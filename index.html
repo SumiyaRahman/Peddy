@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peddy</title>
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="./CSS/style.css" />
+
+    <!-- Tailwind & DaisyUI CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/2e243b1e3c.js" crossorigin="anonymous"></script>
+
+
+    <!-- Customizing Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0E7A81",
+              secondary: "#131313",
+              "small-text": "#131313b3",
+              "banner-small-text": "#13131399",
+              "footer-small-text": "#ffffffe6",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="lato">
+    <!-- HEADER SECTION -->
+    <header class="container mx-auto space-y-14 px-5">
+      <!-- NAVBAR -->
+      <nav>
+        <div class="navbar">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              >
+                <li class="text-base text-small-text"><a>Home</a></li>
+                <li class="text-base text-small-text"><a>Shop</a></li>
+                <li class="text-base text-small-text"><a>Contact</a></li>
+              </ul>
+            </div>
+            <a class="flex items-center space-x-3">
+                <img class="w-[20px] md:w-full" src="./images/logo.webp">
+                <span class="font-extrabold text-secondary text-xl md:text-[32px]">Peddy</span>
+            </a>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 space-x-3">
+                <li class="text-base text-small-text"><a>Home</a></li>
+                <li class="text-base text-small-text"><a>Shop</a></li>
+                <li class="text-base text-small-text"><a>Contact</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <a>
+                <i class="fa-regular fa-user font-bold text-lg md:text-2xl text-primary"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- BANNER -->
+      <section class="banner">
+        <div class="text-center space-y-6">
+            <h6 class="font-bold text-base md:text-2xl"><span class="text-banner-small-text ">Bringing Families Together</span> &#x1F496</h6>
+            <h1 class="text-2xl md:text-4xl lg:text-5xl xl:text-7xl text-secondary font-semibold">Your Path to Adoption<br> Starts Here</h1>
+            <p class="w-full lg:w-3/5 mx-auto text-secondary text-base leading-7">Uniting Purrs, Wags, Chirps, and Hops in Loving Homes Because Every Animal Deserves a Place in Your Heart and Home, One Step, Wing, and Hop at a Time!</p>
+        </div>
+        <div class="text-center mt-8">
+            <button id="view-btn" class="py-2 px-5 md:py-4 md:px-8 bg-primary rounded-lg text-white text-base md:text-xl font-bold hover:text-primary hover:border-2 hover:border-primary hover:bg-transparent outline-none">View More</button>
+        </div>
+        <div class="flex justify-center mt-12">
+            <img src="./images/pet.webp">
+        </div>
+      </section>
+    </header>
+
+    <!-- MAIN SECTION -->
+    <main class="container mx-auto mt-24 px-5">
+        <section id="adopt-section">
+            <div class="text-center space-y-6">
+                <h1 class="text-3xl md:text-[40px] font-bold text-secondary">Adopt Your Fluffy Friend</h1>
+                <p class="w-full lg:w-3/5 lg:mx-auto text-base text-small-text">Adopting a pet means welcoming a loyal companion into your life, bringing joy, love, and endless adventures together. It's a commitment to caring for a furry friend who will fill your days with happiness.</p>
+            </div>
+
+            <!-- PET CATEGORIES -->
+            <div id="pet-category-container" class="pet-categories mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- <div class="dog grid grid-cols-4">
+                    <button class="text-2xl font-bold text-secondary p-6 rounded-xl border border-[#0e7a8126]">Dogs</button>
+                </div> -->
+            </div>
+
+            <!-- SORT PRICE -->
+             <div class="flex justify-between items-center my-8">
+                <div>
+                    <h4 class="font-bold text-secondary text-base md:text-2xl">Best Deal For you</h4>
+                </div>
+                <div>
+                    <button class="px-3 py-2 md:px-6 md:py-3 lg:px-8 lg:py-4 bg-primary rounded-lg text-white text-xs md:text-xl font-semibold">Sort by price</button>
+                </div>
+             </div>
+
+             <!-- PET DETAILS -->
+             <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                <div class="col-span-3">
+                    <div id="all-pets" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- <div class="border p-5 rounded-xl">
+                            <img class="rounded-xl" src=${image}>
+                            <div>
+                                <h6 class="inter mt-6 mb-2 text-secondary text-xl font-bold">${pet_name}</h6>
+                                <div class="text-base space-y-2">
+                                    <div class="breed flex items-center space-x-2">
+                                        <img src="./images/gird.png">
+                                        <p>Breed: ${breed}</p>
+                                    </div>
+                                    <div class="breed flex items-center space-x-2">
+                                        <img src="./images/calender.png">
+                                        <p>Birth: ${breed}</p>
+                                    </div>
+                                    <div class="breed flex items-center space-x-2">
+                                        <img src="./images/gender.png">
+                                        <p>Gender: ${date_of_birth}</p>
+                                    </div>
+                                    <div class="breed flex items-center space-x-2">
+                                        <img src="./images/price.png">
+                                        <p>Price: ${price}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="my-4 border border-b-[#1313131a]">
+
+                            <div class="flex items-center justify-between">
+                                <div class="border border-[#0e7a8126] rounded-lg">
+                                    <img class="py-2 px-4" src="./images/like.png">
+                                </div>
+                                <div>
+                                    <button class="font-semibold text-base text-primary border border-[#0e7a8126] py-2 px-4 rounded-lg">Adopt</button>
+                                </div>
+                                <div>
+                                    <button class="font-semibold text-base text-primary border border-[#0e7a8126] py-2 px-4 rounded-lg">Details</button>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-span-1">
+                    <div id="liked-pets" class="grid grid-cols-2 border gap-6 p-4 rounded-xl">
+                        <div>
+                            <!-- <img class="rounded-xl" src=${image}> -->
+                        </div>
+                    </div>
+                </div>
+             </div> 
+        </section>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer></footer>
+
+    <!-- JS -->
+    <script src="./JS/script.js"></script>
+  </body>
+</html>
