@@ -129,8 +129,8 @@ const allPets = (pets) => {
                                   <div onclick="likedPet('${image}')" class="border border-[#0e7a8126] rounded-lg cursor-pointer">
                                       <img class="py-2 px-4" src="./images/like.png">
                                   </div>
-                                  <div onclick="countDown()">
-                                      <button class="font-semibold text-base text-primary border border-[#0e7a8126] py-2 px-4 rounded-lg">Adopt</button>
+                                  <div onclick="countDown(this)">
+                                      <button class="adopt-btn font-semibold text-base text-primary border border-[#0e7a8126] py-2 px-4 rounded-lg">Adopt</button>
                                   </div>
                                   <div onclick="showDetails(${petId})">
                                       <button class="font-semibold text-base text-primary border border-[#0e7a8126] py-2 px-4 rounded-lg">Details</button>
@@ -140,8 +140,36 @@ const allPets = (pets) => {
           `;
       allPetContainer.append(div);
     });
-  }, 2000)
+  }, 2000);
 };
+// Countdown function with modal
+const countDown = (button) => {
+  let countdown = 3; // Starting the countdown from 3
+  const countdownModal = document.getElementById("countdown_modal");
+  const countdownText = document.getElementById("countdown_text");
+
+  // Show the modal
+  countdownModal.showModal();
+
+  // Countdown logic
+  const countdownInterval = setInterval(() => {
+    countdownText.textContent = countdown;
+    countdown--;
+
+    if (countdown < 0) {
+      clearInterval(countdownInterval);
+
+      // Once countdown finishes, change button to 'Adopted' and disable it
+      button.querySelector('button').textContent = "Adopted";
+      button.querySelector('button').disabled = true;
+
+      // Close modal after countdown
+      countdownModal.close();
+    }
+  }, 1000); // 1-second interval for the countdown
+};
+
+
 
 const getIndividualPets = async (category) => {
   const response = await fetch(
@@ -220,7 +248,7 @@ const showDetails = async (id) => {
           </div>
           <div class="modal-action w-full">
             <form class="w-full" method="dialog">
-              <button class="py-3 w-full border border-[#0e7a8133] text-primary font-bold rounded-lg bg-[#0e7a811a]">Cancel</button>
+              <button class="py-3 w-full border border-[#0e7a8133] text-primary font-bold rounded-lg bg-[#0e7a811a] outline-none">Cancel</button>
             </form>
           </div>
   `;

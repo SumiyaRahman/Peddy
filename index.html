@@ -35,7 +35,8 @@
               secondary: "#131313",
               "small-text": "#131313b3",
               "banner-small-text": "#13131399",
-              "footer-small-text": "#ffffffe6",
+              "footer-title-text": "#ffffffe6",
+              "footer-small-text": "#ffffff99",
             },
           },
         },
@@ -174,13 +175,13 @@
         <!-- spinner -->
         <div class="flex justify-center">
           <span
-          id="spinner"
-          class="hidden loading loading-bars loading-lg"
-        ></span>
+            id="spinner"
+            class="hidden loading loading-bars loading-lg"
+          ></span>
         </div>
 
         <!-- PET DETAILS -->
-        <div id="display-all-pet" class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div id="display-all-pet" class="grid grid-cols-1 xl:grid-cols-4 gap-6">
           <div class="col-span-3">
             <div
               id="all-pets"
@@ -205,8 +206,65 @@
       </dialog>
     </main>
 
+    <!-- Countdown Modal -->
+    <!-- Countdown Modal -->
+    <dialog id="countdown_modal" class="modal">
+      <div class="modal-box py-8">
+        <h3 class="text-2xl font-bold mb-6 text-center">Adopting in...</h3>
+        <div
+          id="countdown_text"
+          class="text-center text-4xl font-extrabold text-primary"
+        ></div>
+      </div>
+    </dialog>
+
     <!-- FOOTER SECTION -->
-    <footer></footer>
+    <footer class="bg-secondary text-white">
+      <div class="container mx-auto footer p-10 mt-8 flex flex-col md:flex-row justify-between">
+        <nav>
+          <a class="flex items-center space-x-3 mb-6">
+            <img class="w-[20px] lg:w-full" src="./images/logo.webp" />
+            <span class="font-extrabold text-xl md:text-lg lg:text-2xl md:text-[32px] text-footer-title-text"
+              >Peddy</span
+            >
+          </a>
+          <a class="link link-hover text-footer-small-text text-xs lg:text-base">Location: av. Washington 165, NY CA 54003</a>
+          <a class="link link-hover text-footer-small-text text-xs lg:text-base">Phone: +31 85 964 47 25</a>
+          <a class="link link-hover text-footer-small-text text-xs lg:text-base">Email: info@assignment-6-PEDDY.surge.sh.com</a>
+          <a class="link link-hover text-footer-small-text text-xs lg:text-base">Openings hours: 9.00 AM - 5.00 PM</a>
+
+          <div class="flex items-center mt-6 space-x-6">
+            <a href="https://www.facebook.com" target="_blank">
+              <img class="w-6 md:w-7 lg:w-8" src="./images/facebook.png">
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+              <img class="w-6 md:w-7 lg:w-8" src="./images/twitter.png">
+            </a>
+            <a href="https://www.youtube.com" target="_blank">
+              <img class="w-6 md:w-7 lg:w-8" src="./images/youtube.png">
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+              <img class="w-6 md:w-7 lg:w-8" src="./images/instagram.png">
+            </a>
+          </div>
+        </nav>
+        <nav>
+          <h6 class="text-lg md:text-base lg:text-lg font-bold text-white text-footer-title-text">Useful Links</h6>
+          <a class="link link-hover text-footer-small-text text-xs lg:text-base">Home</a>
+          <a class="link link-hover text-footer-small-text text-xs lg:text-base">About us</a>
+          <a class="link link-hover text-footer-small-text text-xs lg:text-base">Animals</a>
+          <a class="link link-hover text-footer-small-text text-xs lg:text-base">Foundation</a>
+          <a class="link link-hover text-footer-small-text text-xs lg:text-base">Contact</a>
+        </nav>
+        <form>
+          <h6 class="text-lg md:text-base lg:text-lg font-bold text-white text-footer-title-text">Drop a Message</h6>
+          <fieldset class="form-control w-60 space-y-4 mt-6">
+            <input type="text" placeholder="Enter your email" class="input input-bordered bg-[#ffffff0d] w-full max-w-xs placeholder:text-xs lg:placeholder:text-base placeholder:text-footer-small-text" />
+            <button class="py-2 lg:py-3 bg-primary text-white rounded-lg text-sm lg:text-xl font-bold">Subscribe</button>
+          </fieldset>
+        </form>
+      </div>
+    </footer>
 
     <!-- JS -->
     <script src="./JS/script.js"></script>
