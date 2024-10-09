@@ -58,11 +58,11 @@ const allPets = (pets) => {
       allPetContainer.innerHTML = `
           <div class="bg-[#13131308] py-28 rounded-2xl">
               <div class="flex justify-center">
-                  <img src="./images/error.webp">
+                  <img class="w-24 md:w-[160px]" src="./images/error.webp">
               </div>
               <div class="text-center pt-6 space-y-4">
-                  <h1 class="text-3xl font-bold text-secondary">No Information Available</h1>
-                  <p class="text-base text-small-text">No pets available right now, but check back soon for your future furry friend!</p>
+                  <h1 class="text-xl md:text-3xl font-bold text-secondary">No Information Available</h1>
+                  <p class="text-sm md:text-base text-small-text">No pets available right now, but check back soon for your future furry friend!</p>
               </div>
           </div>
           `;
@@ -91,7 +91,7 @@ const allPets = (pets) => {
       const div = document.createElement("div");
       div.innerHTML = `
                           <div class="border p-5 rounded-xl">
-                              <img class="w-full h-full lg:h-[160px] object-cover rounded-xl" src=${image}>
+                              <img class="w-full h-full md:h-[200px] lg:h-[160px] object-cover rounded-xl" src=${image}>
                               <div>
                                   <h6 class="inter mt-6 mb-2 text-secondary text-xl font-bold">${pet_name}</h6>
                                   <div class="text-base space-y-2 text-small-text">
@@ -186,7 +186,7 @@ const likedPet = async (image) => {
   const div = document.createElement("div");
   div.innerHTML = `
   <div>
-    <img class="rounded-xl" src=${image}>
+    <img class="w-full h-full md:h-[200px] lg:h-[160px] object-cover rounded-xl" src=${image}>
   </div>
   `;
 
