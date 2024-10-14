@@ -10,6 +10,7 @@
 
     <!-- CSS LINK -->
     <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/style2.css">
 
     <!-- Tailwind & DaisyUI CDN -->
     <link
@@ -47,7 +48,7 @@
     <!-- HEADER SECTION -->
     <header class="container mx-auto space-y-14 px-5">
       <!-- NAVBAR -->
-      <nav>
+      <nav id="nav">
         <div class="navbar">
           <div class="navbar-start">
             <div class="dropdown">
@@ -71,12 +72,29 @@
                 tabindex="0"
                 class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
               >
-                <li class="text-base text-small-text"><a>Home</a></li>
-                <li class="text-base text-small-text"><a>Shop</a></li>
-                <li class="text-base text-small-text"><a>Contact</a></li>
+                <li
+                  class="text-base text-small-text hover:bg-primary hover:text-white hover:font-semibold rounded-md"
+                >
+                  <a>Home</a>
+                </li>
+                <li
+                  class="about-sec text-base text-small-text hover:bg-primary hover:text-white hover:font-semibold rounded-md"
+                >
+                  <a>About Us</a>
+                </li>
+                <li
+                  class="adopt text-base text-small-text hover:bg-primary hover:text-white hover:font-semibold rounded-md"
+                >
+                  <a>Adopt</a>
+                </li>
+                <li
+                  class="text-base text-small-text hover:bg-primary hover:text-white hover:font-semibold rounded-md"
+                >
+                  <a>Contact</a>
+                </li>
               </ul>
             </div>
-            <a class="flex items-center space-x-3">
+            <a class="go-to-nav flex items-center space-x-3 cursor-pointer">
               <img class="w-[20px] md:w-full" src="./images/logo.webp" />
               <span class="font-extrabold text-secondary text-xl md:text-[32px]"
                 >Peddy</span
@@ -85,12 +103,32 @@
           </div>
           <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1 space-x-3">
-              <li class="text-base text-small-text"><a>Home</a></li>
-              <li class="text-base text-small-text"><a>Shop</a></li>
-              <li class="text-base text-small-text"><a>Contact</a></li>
+              <li
+                id="banner-sec"
+                class="text-base text-small-text hover:bg-primary hover:text-white hover:font-semibold rounded-md"
+              >
+                <a>Home</a>
+              </li>
+              <li
+                id="about-sec"
+                class="about-sec text-base text-small-text hover:bg-primary hover:text-white hover:font-semibold rounded-md"
+              >
+                <a>About Us</a>
+              </li>
+              <li
+                class="adopt text-base text-small-text hover:bg-primary hover:text-white hover:font-semibold rounded-md"
+              >
+                <a>Adopt</a>
+              </li>
+              <li
+                id="contact"
+                class="text-base text-small-text hover:bg-primary hover:text-white hover:font-semibold rounded-md"
+              >
+                <a>Contact</a>
+              </li>
             </ul>
           </div>
-          <div class="navbar-end">
+          <div class="navbar-end cursor-pointer">
             <a>
               <i
                 class="fa-regular fa-user font-bold text-lg md:text-2xl text-primary"
@@ -101,7 +139,7 @@
       </nav>
 
       <!-- BANNER -->
-      <section class="banner">
+      <section id="banner" class="banner">
         <div class="text-center space-y-6">
           <h6 class="font-bold text-base md:text-2xl">
             <span class="text-banner-small-text"
@@ -124,7 +162,7 @@
         <div class="text-center mt-8">
           <button
             id="view-btn"
-            class="py-2 px-5 md:py-4 md:px-8 bg-primary rounded-lg text-white text-base md:text-xl font-bold hover:text-primary hover:border-2 hover:border-primary hover:bg-transparent outline-none"
+            class="adopt py-2 px-5 md:py-4 md:px-8 bg-primary rounded-lg text-white text-base md:text-xl font-bold hover:text-primary hover:border-2 hover:border-primary hover:bg-transparent outline-none"
           >
             View More
           </button>
@@ -136,7 +174,85 @@
     </header>
 
     <!-- MAIN SECTION -->
-    <main class="container mx-auto mt-24 px-5">
+    <main class="container mx-auto mt-24 px-5 space-y-20">
+      <section class="about-us" id="about-us">
+        <div
+          class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+        >
+          <!-- Text Content -->
+          <div class="text-left">
+            <h2 class="text-4xl font-bold mb-1 text-secondary">About Us</h2>
+            <hr class="about-hr max-w-12" />
+            <p class="text-base my-4 text-small-text">
+              At Peddy, our mission is to connect loving homes with adorable
+              pets in need of forever families. We believe every pet deserves a
+              chance at a happy life.
+            </p>
+
+            <h3 class="text-xl font-semibold mb-4 text-secondary">Our Story</h3>
+            <p class="text-base text-small-text mb-6">
+              Founded in 2024, Peddy started as a small initiative by pet lovers
+              dedicated to helping animals find loving homes. With the support
+              of local shelters and volunteers, we've grown into a platform that
+              facilitates the adoption of pets across the country.
+            </p>
+
+            <h3 class="text-xl font-semibold mb-4 text-secondary">
+              Our Values
+            </h3>
+            <ul class="text-small-text text-base">
+              <li>
+                <i
+                  class="fa-regular fa-circle-check text-primary text-xs me-1 font-semibold"
+                ></i>
+                Promote responsible pet ownership
+              </li>
+              <li>
+                <i
+                  class="fa-regular fa-circle-check text-primary text-xs me-1 font-semibold"
+                ></i>
+                Raise awareness about pet adoption
+              </li>
+              <li>
+                <i
+                  class="fa-regular fa-circle-check text-primary text-xs me-1 font-semibold"
+                ></i>
+                Support local animal shelters and rescues
+              </li>
+            </ul>
+
+            <div class="mt-8">
+              <a href="#pets" class="bg-primary text-white py-2 px-4 rounded"
+                >Browse Pets</a
+              >
+            </div>
+          </div>
+
+          <!-- Image Content -->
+          <div>
+            <div class="grid grid-cols-2 gap-2">
+              <div class="flex gap-2">
+                <img
+                  class="w-full rounded-xl object-cover"
+                  src="./images/cat.jpg"
+                />
+                <img
+                  class="w-full rounded-xl object-cover"
+                  src="./images/rabbit.jpg"
+                />
+              </div>
+              <div class="col-span-2">
+                <img
+                  class="w-full rounded-xl object-cover"
+                  src="./images/dog.jpg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ADOPTION -->
       <section id="adopt-section">
         <div class="text-center space-y-6">
           <h1 class="text-3xl md:text-[40px] font-bold text-secondary">
@@ -200,13 +316,124 @@
         </div>
       </section>
 
+      <!-- FAQ Section -->
+      <section id="faq" class="bg-gray-50 py-12 px-4 md:px-12 rounded-xl">
+        <div class="max-w-4xl mx-auto">
+          <h2
+            class="text-2xl md:text-4xl font-bold text-primary mb-8 text-center"
+          >
+            Frequently Asked Questions
+          </h2>
+
+          <div class="space-y-4">
+            <!-- FAQ Item 1 -->
+            <div
+              tabindex="0"
+              class="collapse collapse-arrow border border-[#0E7A81] bg-white rounded-box"
+            >
+              <div
+                class="collapse-title text-base md:text-lg text-secondary font-medium"
+              >
+                What is the adoption process?
+              </div>
+              <div
+                class="collapse-content text-small-text text-sm md:text-base"
+              >
+                <p>
+                  The adoption process involves filling out an application,
+                  meeting the pet, and paying a small adoption fee.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div
+              tabindex="0"
+              class="collapse collapse-arrow border border-[#0E7A81] bg-white rounded-box"
+            >
+              <div
+                class="collapse-title text-base md:text-lg text-secondary font-medium"
+              >
+                What are the adoption fees?
+              </div>
+              <div
+                class="collapse-content text-small-text text-sm md:text-base"
+              >
+                <p>
+                  Adoption fees vary by animal, but typically range from $50 to
+                  $200.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div
+              tabindex="0"
+              class="collapse collapse-arrow border border-[#0E7A81] bg-white rounded-box"
+            >
+              <div
+                class="collapse-title text-base md:text-lg text-secondary font-medium"
+              >
+                Can I return a pet if it doesn’t work out?
+              </div>
+              <div
+                class="collapse-content text-small-text text-sm md:text-base"
+              >
+                <p>
+                  Yes, we have a return policy. Please contact us within the
+                  first 30 days for assistance.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div
+              tabindex="0"
+              class="collapse collapse-arrow border border-[#0E7A81] bg-white rounded-box"
+            >
+              <div
+                class="collapse-title text-base md:text-lg text-secondary font-medium"
+              >
+                How do I take care of my new pet?
+              </div>
+              <div
+                class="collapse-content text-small-text text-sm md:text-base"
+              >
+                <p>
+                  We provide a comprehensive care guide for all new pet parents,
+                  covering diet, exercise, and veterinary care.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div
+              tabindex="0"
+              class="collapse collapse-arrow border border-[#0E7A81] bg-white rounded-box"
+            >
+              <div
+                class="collapse-title text-base md:text-lg text-secondary font-medium"
+              >
+                Are the pets vaccinated?
+              </div>
+              <div
+                class="collapse-content text-small-text text-sm md:text-base"
+              >
+                <p>
+                  Yes, all our pets are vaccinated, spayed/neutered, and
+                  microchipped before adoption.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- Modal -->
       <dialog id="my_modal_1" class="modal">
         <div id="modal-container" class="modal-box py-8"></div>
       </dialog>
     </main>
 
-    <!-- Countdown Modal -->
     <!-- Countdown Modal -->
     <dialog id="countdown_modal" class="modal">
       <div class="modal-box py-8">
@@ -219,48 +446,90 @@
     </dialog>
 
     <!-- FOOTER SECTION -->
-    <footer class="bg-secondary text-white">
-      <div class="container mx-auto footer p-10 mt-8 flex flex-col md:flex-row justify-between">
+    <footer id="footer" class="bg-secondary text-white">
+      <div
+        class="container mx-auto footer p-10 mt-8 flex flex-col md:flex-row justify-between"
+      >
         <nav>
           <a class="flex items-center space-x-3 mb-6">
             <img class="w-[20px] lg:w-full" src="./images/logo.webp" />
-            <span class="font-extrabold text-xl md:text-lg lg:text-2xl md:text-[32px] text-footer-title-text"
+            <span
+              class="font-extrabold text-xl md:text-lg lg:text-2xl md:text-[32px] text-footer-title-text"
               >Peddy</span
             >
           </a>
-          <a class="link link-hover text-footer-small-text text-xs lg:text-base">Location: av. Washington 165, NY CA 54003</a>
-          <a class="link link-hover text-footer-small-text text-xs lg:text-base">Phone: +31 85 964 47 25</a>
-          <a class="link link-hover text-footer-small-text text-xs lg:text-base">Email: info@assignment-6-PEDDY.surge.sh.com</a>
-          <a class="link link-hover text-footer-small-text text-xs lg:text-base">Openings hours: 9.00 AM - 5.00 PM</a>
+          <a class="link link-hover text-footer-small-text text-xs lg:text-base"
+            >Location: av. Washington 165, NY CA 54003</a
+          >
+          <a class="link link-hover text-footer-small-text text-xs lg:text-base"
+            >Phone: +31 85 964 47 25</a
+          >
+          <a
+            href="https://assignment-6-peddy.surge.sh/"
+            target="_blank"
+            class="link link-hover text-footer-small-text text-xs lg:text-base"
+            >Email: assignment-6-PEDDY.surge.sh.com</a
+          >
+          <a class="link link-hover text-footer-small-text text-xs lg:text-base"
+            >Openings hours: 9.00 AM - 5.00 PM</a
+          >
 
           <div class="flex items-center mt-6 space-x-6">
             <a href="https://www.facebook.com" target="_blank">
-              <img class="w-6 md:w-7 lg:w-8" src="./images/facebook.png">
+              <img class="w-6 md:w-7 lg:w-8" src="./images/facebook.png" />
             </a>
             <a href="https://www.twitter.com" target="_blank">
-              <img class="w-6 md:w-7 lg:w-8" src="./images/twitter.png">
+              <img class="w-6 md:w-7 lg:w-8" src="./images/twitter.png" />
             </a>
             <a href="https://www.youtube.com" target="_blank">
-              <img class="w-6 md:w-7 lg:w-8" src="./images/youtube.png">
+              <img class="w-6 md:w-7 lg:w-8" src="./images/youtube.png" />
             </a>
             <a href="https://www.instagram.com" target="_blank">
-              <img class="w-6 md:w-7 lg:w-8" src="./images/instagram.png">
+              <img class="w-6 md:w-7 lg:w-8" src="./images/instagram.png" />
             </a>
           </div>
         </nav>
         <nav>
-          <h6 class="text-lg md:text-base lg:text-lg font-bold text-white text-footer-title-text">Useful Links</h6>
-          <a class="link link-hover text-footer-small-text text-xs lg:text-base">Home</a>
-          <a class="link link-hover text-footer-small-text text-xs lg:text-base">About us</a>
-          <a class="link link-hover text-footer-small-text text-xs lg:text-base">Animals</a>
-          <a class="link link-hover text-footer-small-text text-xs lg:text-base">Foundation</a>
-          <a class="link link-hover text-footer-small-text text-xs lg:text-base">Contact</a>
+          <h6
+            class="text-lg md:text-base lg:text-lg font-bold text-white text-footer-title-text"
+          >
+            Useful Links
+          </h6>
+          <a
+            class="go-to-nav link link-hover text-footer-small-text text-xs lg:text-base"
+            >Home</a
+          >
+          <a
+            class="about-sec link link-hover text-footer-small-text text-xs lg:text-base"
+            >About us</a
+          >
+          <a class="link link-hover text-footer-small-text text-xs lg:text-base"
+            >Animals</a
+          >
+          <a class="link link-hover text-footer-small-text text-xs lg:text-base"
+            >Foundation</a
+          >
+          <a class="link link-hover text-footer-small-text text-xs lg:text-base"
+            >Contact</a
+          >
         </nav>
         <form>
-          <h6 class="text-lg md:text-base lg:text-lg font-bold text-white text-footer-title-text">Drop a Message</h6>
+          <h6
+            class="text-lg md:text-base lg:text-lg font-bold text-white text-footer-title-text"
+          >
+            Drop a Message
+          </h6>
           <fieldset class="form-control w-60 space-y-4 mt-6">
-            <input type="text" placeholder="Enter your email" class="input input-bordered bg-[#ffffff0d] w-full max-w-xs placeholder:text-xs lg:placeholder:text-base placeholder:text-footer-small-text" />
-            <button class="py-2 lg:py-3 bg-primary text-white rounded-lg text-sm lg:text-xl font-bold">Subscribe</button>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="input input-bordered bg-[#ffffff0d] w-full max-w-xs placeholder:text-xs lg:placeholder:text-base placeholder:text-footer-small-text"
+            />
+            <button
+              class="py-2 lg:py-3 bg-primary text-white rounded-lg text-sm lg:text-xl font-bold"
+            >
+              Subscribe
+            </button>
           </fieldset>
         </form>
       </div>
@@ -268,5 +537,6 @@
 
     <!-- JS -->
     <script src="./JS/script.js"></script>
+    <script src="./JS/utilities.js"></script>
   </body>
 </html>

@@ -1,8 +1,30 @@
 let sortPets = [];
+let val;
 
-const adoptSection = document.getElementById("adopt-section");
-document.getElementById("view-btn").addEventListener("click", function () {
-  adoptSection.scrollIntoView({ behavior: "smooth" });
+document.querySelectorAll(".adopt").forEach((element) => {
+  element.addEventListener('click', () => {
+    scrollToSection("adopt-section");
+  })
+})
+
+document.querySelectorAll(".go-to-nav").forEach((element) => {
+  element.addEventListener('click', () => {
+    scrollToSection("nav");
+  });
+});
+
+document.getElementById("contact").addEventListener('click', () => {
+  scrollToSection("footer");
+});
+
+document.getElementById("banner-sec").addEventListener('click', () => {
+  scrollToSection("banner");
+});
+
+document.querySelectorAll(".about-sec").forEach((element) => {
+  element.addEventListener('click', () => {
+    scrollToSection("about-us");
+  });
 });
 
 const getPetByCategories = async () => {
@@ -18,15 +40,13 @@ const petCategories = async (categories) => {
   );
 
   categories.forEach((petCategory) => {
-    const { category_icon, category } = petCategory;
+    const {id, category_icon, category} = petCategory;
 
     const div = document.createElement("div");
     div.innerHTML = `
-        <div onclick="getIndividualPets('${category}')" class="py-5 px-8 rounded-xl border border-[#0e7a8126] flex justify-center cursor-pointer">
-            <button class="flex items-center justify-center">
-                <img class="w-14 h-14" src=${category_icon}>
-                <span class="text-2xl font-bold text-secondary ps-4">${category}s</span>
-            </button>
+        <div id="container${id}" onclick="getIndividualPets('${category}', ${id})" class="item py-5 px-8 rounded-xl border border-[#0e7a8126] flex justify-center items-center cursor-pointer">
+            <img class="w-14 h-14" src=${category_icon}>
+            <span class="text-2xl font-bold text-secondary ps-4">${category}s</span>
         </div>
         `;
     petCategoryContainer.append(div);
@@ -41,7 +61,7 @@ const getAllPets = async () => {
   allPets(data.pets);
 };
 
-const allPets = (pets) => {
+const allPets = (pets, id) => {
   const spinner = document.getElementById("spinner");
   const displayAllPet = document.getElementById("display-all-pet");
   const allPetContainer = document.getElementById("all-pets");
@@ -51,6 +71,19 @@ const allPets = (pets) => {
   displayAllPet.classList.add("hidden");
 
   setTimeout(() => {
+    const items = document.querySelectorAll(".item");
+    items.forEach((item) => {
+      item.classList.remove("activeBtn");
+      item.classList.add("rounded-xl", "border-[#0e7a8126]");
+    });
+    if(id){
+      const selectedItems = document.getElementById(`container${id}`);
+      selectedItems.classList.remove("rounded-xl", "border-[#0e7a8126]");
+      selectedItems.classList.add("activeBtn");
+      val = id;
+    } else {
+      val = null;
+    }
     spinner.classList.add("hidden");
     displayAllPet.classList.remove("hidden");
     if (pets.length == 0) {
@@ -144,14 +177,12 @@ const allPets = (pets) => {
 };
 // Countdown function with modal
 const countDown = (button) => {
-  let countdown = 3; // Starting the countdown from 3
+  let countdown = 3;
   const countdownModal = document.getElementById("countdown_modal");
   const countdownText = document.getElementById("countdown_text");
 
-  // Show the modal
   countdownModal.showModal();
 
-  // Countdown logic
   const countdownInterval = setInterval(() => {
     countdownText.textContent = countdown;
     countdown--;
@@ -159,25 +190,22 @@ const countDown = (button) => {
     if (countdown < 0) {
       clearInterval(countdownInterval);
 
-      // Once countdown finishes, change button to 'Adopted' and disable it
       button.querySelector('button').textContent = "Adopted";
       button.querySelector('button').disabled = true;
-
-      // Close modal after countdown
+  
       countdownModal.close();
     }
-  }, 1000); // 1-second interval for the countdown
+  }, 1000); 
 };
 
 
 
-const getIndividualPets = async (category) => {
+const getIndividualPets = async (category, id) => {
   const response = await fetch(
     `https://openapi.programming-hero.com/api/peddy/category/${category}`
   );
   const data = await response.json();
-
-  allPets(data.data);
+  allPets(data.data, id);
 };
 
 const likedPet = async (image) => {
@@ -256,9 +284,8 @@ const showDetails = async (id) => {
 };
 
 const showSortedPets = () => {
-  allPets(sortPets);
-}
-
+  allPets(sortPets, val);
+};
 
 getAllPets();
 getPetByCategories();
